@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: survey-web-app
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: JAVA_OPTS
+        value: "-Xmx512m -Xms256m -Djava.security.egd=file:/dev/./urandom"
+      - key: CATALINA_OPTS
+        value: "-server -XX:+UseG1GC -XX:MaxGCPauseMillis=100"
+    healthCheckPath: /
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - src/**
+        - pom.xml
+        - Dockerfile
+      ignoredPaths:
+        - README.md
+        - docs/**
