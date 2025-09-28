@@ -2,8 +2,6 @@
 
 A Java Servlet and JSP web application for collecting user survey data.
 
-https://ltw-6-2.onrender.com
-
 ## 🚀 Features
 
 - User-friendly survey form
@@ -153,3 +151,4 @@ For deployment issues, check:
 - Docker build logs
 
 - Application health check status
+
